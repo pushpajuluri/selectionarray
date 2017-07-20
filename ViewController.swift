@@ -25,6 +25,7 @@ func getArray() -> [SelectionModel]
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -48,9 +49,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
        func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let vw = UIView()
         vw.backgroundColor = UIColor.red
-        
-        return vw
-
+        vw.frame = CGRect(x: tableview.frame.width, y: 61, width:tableview.frame.width, height: tableview.frame.height)
+return vw
 }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 61.0
